@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Maven Project Settings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form method="GET" action="/file-rename">
+<p>Project name:</p>
+    <label>
+        <select name="projectName">
+            <option th:each="dropDownItem : ${filesInDir}"
+                    th:value="${dropDownItem.name}"
+                    th:text="${dropDownItem.name}"></option>
+        </select>
+    </label>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
